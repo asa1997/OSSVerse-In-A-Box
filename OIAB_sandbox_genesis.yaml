@@ -1,0 +1,193 @@
+---
+
+## Defines the lab type used by BeSman.
+## Possible inputs: Organization, Individual
+##  Organization - lab type is organization if security analyst is affiliated to a organization.
+##  Individual - If the security analyst is independant analyst.
+BESMAN_LAB_TYPE: Organization
+
+## Name of the Lab
+BESMAN_LAB_NAME: DemoLab
+
+## Version of BeSMan in Github to be installed.
+BESMAN_VER: 0.5.0
+
+## Type of lab to be installed. 
+## Possible inputs: personal, public, private.
+##  personal: Installs beslab in security analyst personal system only.
+##  public: Does use public code collab platform e.g github, gitlab etc.
+##  private: Installs beslab including provate code collab on the organization infra.
+BESLAB_LAB_TYPE: private
+
+## Defines the type of BESLAB deployment
+## Possible inputs: host, bare, lite
+##  host: Deploy beslab on a hosted VM based system.
+##  bare: Deploy beslab on local system or remote system using ansible playbooks.
+##  lite: Deploy beslab on low capcity system using only shell scripts only.
+BESLAB_LAB_MODE: lite
+
+## Version of beslab to be installed.
+## Possible inputs: latest, dev, <version number in x.x.x format>.
+##  latest: will install the latest released version of BeSLab (default).
+##  dev: To install the development version of BeSLab.
+##  x.x.x: valid version number to be installed in the format x.x.x e.g 0.1.0.
+##  [ Note: default is dev released version ]
+BESLAB_VERSION: dev
+
+## Domain name to be used for the beslab.
+## Example inputs: xyz.abc.com
+# BESLAB_DOMAIN_NAME: abc.xyz.com 
+
+## URL & PATH configurations to checkout BLIman
+BLIMAN_BROWSER_URL: https://github.com
+BLIMAN_HOSTED_URL: https://raw.githubusercontent.com
+BLIMAN_NAMESPACE: Be-Secure
+BLIMAN_REPO_URL: https://raw.githubusercontent.com/Be-Secure/BLIman/main
+BLIMAN_VERSION: 0.4.1
+BLIMAN_LAB_URL: https://raw.githubusercontent.com/OSSVerse/OSSVerse-In-A-Box/main
+
+## Defines hostname for VM to be installed in HOST mode.
+#BESLAB_VM_NAME: BesLab
+
+## Tells which OS to be installed on VM when HOST mode is used.
+#BESLAB_VM_OS: ubuntu
+
+## Enable if need to install the Desktop UI for VM in Host mode.
+#BESLAB_VM_GUI: true
+
+## Package for the desktop UI required only if UI needed in Host mode.
+#BESLAB_GUI: ubuntu-desktop
+
+## Image to be used for the OS installation on VM in Host mode.
+#BESLAB_VAGRANT_BOX: hashicorp/bionic64
+
+## User to be created on the VM after installation in Host mode.
+#BESLAB_USER: vagrant
+
+## Home directory for the new user created on VM in Host mode.
+#BESLAB_PWD: vagrant
+
+## Hostname to be set for the VM installed in Host mode.
+#BESLAB_VAGRANT_HOSTNAME: BeSLab.dev
+
+## Name to be assigned to the VM in virtual box for host mode.
+#BESLAB_VAGRANT_MACHINE_NAME: BesLab
+
+## Name of the public code collaboration platfrom. e.g Github, Gitlab etc.
+#BESLAB_PUBLIC_CODECOLLAB_PROVIDER_NAME: github
+
+## URL of the public code collab to use git commands.
+#BESLAB_PUBLIC_CODECOLLAB_PROVIDER_BROWSER_URL: https://github.com
+
+## URL of the public code collab to use git commands.
+#BESLAB_PUBLIC_CODECOLLAB_PROVIDER_DOWNLOAD_URL: https://raw.githubusercontent.com
+
+## Username to be used for the access to public code collab platform.
+#BESLAB_PUBLIC_CODECOLLAB_USERNAME: abc@xyz.com
+ 
+## Key token to be used for the access of public code collab platform.
+#BESLAB_PUBLIC_CODECOLLAB_ACCESS_TOKEN: gihub_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+## Namespace in the public code collab to fetch lab data from.
+#BESLAB_PUBLIC_CODECOLLAB_AFFILIATE_NAMESPACE: Be-Secure
+
+## Namespace to be used for the deployment of the new lab.
+#BESLAB_PUBLIC_CODECOLLAB_LAB_NAMESPACE: ABC
+
+## Code collaboration tool to be used for the private lab installation.
+BESLAB_PRIVATE_LAB_CODECOLLAB_TOOL: gitlab-ce
+
+## Version of the code collab tool to be installed on the lab.
+BESLAB_PRIVATE_LAB_CODECOLLAB_TOOL_VERSION: 17.2.1-ce.0
+
+## Port on which the code collab tool to be installed on the beslab.
+BESLAB_PRIVATE_LAB_CODECOLLAB_TOOL_PORT: 8081
+
+## Storage path (Mount Point) for the code collaboration tool.
+#BESLAB_PRIVATE_LAB_CODECOLLAB_DATABASE_PATH: /opt/database
+
+## Path or directory to which code collab tool is installed.
+#BESLAB_PRIVATE_LAB_CODECOLLAB_INSTALL_PATH: /opt/tool/
+
+## URL to be used for the SMTP server for code collab tool.
+#BESLAB_PRIVATE_LAB_CODECOLLAB_TOOL_SMTP_URL: https://smtp.xx.com
+
+## Username to be used for the SMTP server login by code collab tool.
+#BESLAB_PRIVATE_LAB_CODECOLLAB_TOOL_SMTP_USER: abc
+
+## Password to be used by the code collab tool for login to the SMTP server.
+#BESLAB_PRIVATE_LAB_CODECOLLAB_TOOL_SMTP_USER: xxxxxxx
+
+## Port to be used for code collab tool installation.
+#BESLAB_PRIVATE_LAB_CODECOLLAB_TOOL_PORT: 8080
+
+## Deffault admin password to be set for the code collab tool installed.
+#BESLAB_PRIVATE_LAB_CODECOLLAB_TOOL_ADMIN_PASS: xxxxxxxx
+
+## Domain name to be used for code collab tool installed.
+#BESLAB_PRIVATE_LAB_CODECOLLAB_TOOL_DOMAIN_NAME: o31e.com
+
+## List of datastores to be created in code collaboration tool
+BESLAB_CODECOLLAB_DATASTORES:
+   - besecure-assessment-datastore
+   - besecure-assets-store
+   - besecure-ml-assessment-datastore
+
+
+## Configurations to be used by the dashboard tool BeSLighthouse.
+BESLAB_DASHBOARD_TOOL: BeSLighthouse
+BESLAB_DASHBOARD_PORT: 80
+BESLAB_DASHBOARD_RELEASE_VERSION: 0.19.0
+BESLAB_DASHBOARD_INSTALL_PATH: /opt/BeSLighthouse
+BESLAB_DASHBOARD_API_INSTALL_PATH: /opt/BeSRestApi
+BESLAB_DASHBOARD_ATEESTATION_STORE_NAME: ossattestation-datastore
+
+
+## Here starts the configurations for OSSVerse sandbox environment
+
+# Name of the organization from which we will download the OSSverse components.
+BESLAB_ORG: OSSVerse
+
+# Name of the service
+BESLAB_ENV_NAME: OIAB-setup
+
+# Components to be installed
+
+BESLAB_OIAB_COMPONENTS:
+  - buyer_ui
+  - buyer_app
+  - seller_app
+  - seller_ui
+  - ossverse_network
+  - beslighthouse
+  - gitlab
+
+# Name of the marketplace ui source code repo.
+BESLAB_OIAB_BUYER_UI: OSSVerse-Buyer-App-ui
+
+# Name of the buyer app source code repo.
+BESLAB_OIAB_BUYER_APP: OSSVerse-Buyer-App
+
+# The path where we download the marketplace ui source code.
+BESLAB_OIAB_BUYER_UI_DIR: $HOME/$BESLAB_OIAB_BUYER_UI 
+
+# The path where we download the buyer app source code.
+BESLAB_OIAB_BUYER_APP_DIR: $HOME/$BESLAB_OIAB_BUYER_APP
+
+# Enter the BAP ID
+BESLAB_BAP_ID: "bap-network"
+
+# Enter the network url for bap
+BESLAB_BAP_URI: "http://bap-network:5002"
+
+# Public IP address of the machine/vm
+BESLAB_IP_ADDRESS: "http://localhost"
+
+# location for beckn-onix code
+BESLAB_BECKN_ONIX_DIR: "$HOME/$BESLAB_BECKN_ONIX_SOURCE_REPO"
+
+# name for oasp-seller-app
+BESLAB_SELLER_APP_SOURCE_REPO: "oasp-seller-app"
+
+# location for oasp-seller-app
+BESLAB_SELLER_APP_DIR: "$HOME/oasp-seller-app"
